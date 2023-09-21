@@ -102,7 +102,7 @@ export default function Home() {
 }
 
 
-
+const [searchTerm, setSearchTerm] = useState('');
   const [items, setItems] = useState(photos);
 
   const onSortEnd = ({ oldIndex, newIndex }) => {
@@ -228,13 +228,63 @@ w={['100%','100%','50%','50%']}
   <InputLeftElement>
      <BsSearch color="white" />
     </InputLeftElement>
-    <Input color={'white'} bg={'#06202f'} placeholder='Search image' />
+    <Input color={'white'} bg={'#06202f'}  placeholder='Search image'
+    value={searchTerm}
+    onChange={(e) => setSearchTerm(e.target.value)}
+     />
   
   </InputGroup>
   <IconButton bg={'none'} ml={'20px'} w={'50px'} aria-label='Filter Search' icon={<BiFilter color="'white" fontSize={'30px'}/>}  />
 </Box>
 
     
+    </Stack>
+    <Stack
+    w={'full'}
+    h={'50px'}
+pt={'10px'}
+spacing={'10'}
+    alignItems={'center'}
+    direction={'row'}
+    justifyContent={'center'}
+    >
+      <Button
+       bg={'none'}
+       color={'white'}
+       border={'1px solid white'}
+       borderRadius={'15px'}
+       p={'2px'}
+       w={'60px'}
+       h={'30px'}
+       onClick={(e) => setSearchTerm('bikes')}
+      >
+        Bikes
+      </Button>
+      <Button
+        bg={'none'}
+        color={'white'}
+        border={'1px solid white'}
+        borderRadius={'15px'}
+        p={'2px'}
+        w={'60px'}
+        h={'30px'}
+        onClick={(e) => setSearchTerm('cars')}
+      >
+        Cars
+      </Button>
+      <Button
+      bg={'none'}
+      color={'white'}
+      border={'1px solid white'}
+      borderRadius={'15px'}
+      p={'2px'}
+      w={'60px'}
+      h={'30px'}
+      onClick={(e) => setSearchTerm('nature')}
+      >
+        Nature
+      </Button>
+
     </Stack>
     <Box
     px={'10%'}
@@ -244,7 +294,11 @@ w={['100%','100%','50%','50%']}
     w={'full'}
     pb={'50px'}
     >
-    <SortableGallery items={items} onSortEnd={onSortEnd} axis={"xy"} />
+  <SortableGallery
+  items={items.filter(item => item.tag && item.tag.toLowerCase().includes(searchTerm.toLowerCase()))}
+  onSortEnd={onSortEnd}
+  axis={"xy"}
+/>
     </Box>
 </>
   )}
