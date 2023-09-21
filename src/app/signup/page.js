@@ -29,6 +29,7 @@ import {
   Divider,
   AbsoluteCenter,
   InputRightElement,
+  Link
   
 
   
@@ -259,6 +260,14 @@ export default function Signup(){
                >
     {loading ? <Spinner /> : 'Signup'}
                </Button>
+               <Text
+               color={'white'}
+                 fontSize={"16px"}
+                 fontWeight={"400"}
+                 letterSpacing={"-0.72px"}
+               >
+                 Already have an account?  <Link color={'#4c60fc'} href='/login'>Log in</Link>
+               </Text>
                </VStack>
              </Box>
 

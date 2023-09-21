@@ -155,14 +155,14 @@ px={'20px'}
   <Box
   h={'auto'}
   w={'auto'}
-  bg={'blue'}
+
   borderRadius={'10px'}
   >
 <Menu
 
 >
-  <MenuButton as={Button}  rightIcon={<BsChevronDoubleDown/>} >
-  <BiUserCircle/> user
+  <MenuButton color={'white'} bg={'none'} border={'1px solid white'} as={Button} rightIcon={<BsChevronDoubleDown/>} >
+  <BiUserCircle/> 
   </MenuButton>
   <MenuList
   color='black'
@@ -201,7 +201,7 @@ mb={'20px'}
    color={'white'}
    fontWeight={'700'}
     >
-      Hi Timilehin
+      Hi User
    
     </Heading>
    
@@ -234,7 +234,7 @@ w={['100%','100%','50%','50%']}
      />
   
   </InputGroup>
-  <IconButton bg={'none'} ml={'20px'} w={'50px'} aria-label='Filter Search' icon={<BiFilter color="'white" fontSize={'30px'}/>}  />
+ 
 </Box>
 
     
@@ -242,7 +242,7 @@ w={['100%','100%','50%','50%']}
     <Stack
     w={'full'}
     h={'50px'}
-pt={'10px'}
+pt={'20px'}
 spacing={'10'}
     alignItems={'center'}
     direction={'row'}
@@ -252,10 +252,10 @@ spacing={'10'}
        bg={'none'}
        color={'white'}
        border={'1px solid white'}
-       borderRadius={'15px'}
+       borderRadius={'20px'}
        p={'2px'}
-       w={'60px'}
-       h={'30px'}
+       w={'80px'}
+       h={'40px'}
        onClick={(e) => setSearchTerm('bikes')}
       >
         Bikes
@@ -264,10 +264,10 @@ spacing={'10'}
         bg={'none'}
         color={'white'}
         border={'1px solid white'}
-        borderRadius={'15px'}
+        borderRadius={'20px'}
         p={'2px'}
-        w={'60px'}
-        h={'30px'}
+        w={'80px'}
+        h={'40px'}
         onClick={(e) => setSearchTerm('cars')}
       >
         Cars
@@ -276,10 +276,10 @@ spacing={'10'}
       bg={'none'}
       color={'white'}
       border={'1px solid white'}
-      borderRadius={'15px'}
+      borderRadius={'20px'}
       p={'2px'}
-      w={'60px'}
-      h={'30px'}
+      w={'80px'}
+      h={'40px'}
       onClick={(e) => setSearchTerm('nature')}
       >
         Nature

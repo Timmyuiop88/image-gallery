@@ -29,7 +29,7 @@ import {
   Divider,
   AbsoluteCenter,
   InputRightElement,
-  
+  Link
 
   
 } from "@chakra-ui/react";
@@ -258,6 +258,14 @@ disabled={!email || !password}
                >
     {loading ? <Spinner /> : 'Login'}
                </Button>
+               <Text
+               color={'white'}
+                 fontSize={"16px"}
+                 fontWeight={"400"}
+                 letterSpacing={"-0.72px"}
+               >
+                 Not registered yet? <Link color={'#4c60fc'} href='/signup'>Create an Account</Link>
+               </Text>
                </VStack>
              </Box>
 
