@@ -28,7 +28,7 @@ import {
   MenuGroup,
   MenuOptionGroup,
   MenuDivider,
-
+  Spinner
 
   
 } from "@chakra-ui/react";
@@ -52,7 +52,11 @@ import "./globals.css";
 const imgWithClick = { cursor: "pointer" };
 
 const Photo = ({ index, onClick, photo, margin, direction, top, left}) => {
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
 
+  const handleImageLoad = () => {
+    setIsImageLoaded(true);
+  };
   const imgStyle = { margin: margin,};
   if (direction === "column") {
     imgStyle.position = "absolute";
@@ -65,9 +69,16 @@ const Photo = ({ index, onClick, photo, margin, direction, top, left}) => {
   };
 
   return (
+<>
+
+{!isImageLoaded && (
+       <Spinner color="white"/>
+      )}
+
+    
 
  <Image
-  
+ onLoad={handleImageLoad}
   className="imgs"
 
     style={onClick ? { ...imgStyle, ...imgWithClick } : imgStyle}
@@ -76,7 +87,7 @@ const Photo = ({ index, onClick, photo, margin, direction, top, left}) => {
     alt="img"
   />
 
-    
+  </>  
    
   );
 };
